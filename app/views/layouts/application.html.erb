@@ -9,9 +9,22 @@
   </head>
 
   <body>
+    <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %> alert-dismissable">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+    <%= value %>
+    </div>
+    <% end %>
 
-  	<p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <div id="user-nav">
+      <% if user_signed_in? %>
+        Conectado como <%= current_user.email %>. No eres t&uacute;?
+        <%= link_to "Logout", destroy_user_session_path,:method => :delete %>
+      <% else %>
+        <%= link_to "Alta", new_user_registration_path %> o 
+        <%= link_to "Login", new_user_session_path %>
+        <% end %>
+    </div>
     <%= yield %>
   </body>
 </html>
