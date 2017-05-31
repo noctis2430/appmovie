@@ -99,3 +99,4 @@ config.action_mailer.default_url_options = { :host => ENV["DOMAIN"] }
     enable_starttls_auto: true,
     user_name: ENV["MAILER_USERNAME"],
     password: ENV["MAILER_PASSWORD"]
+  }
