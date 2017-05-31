@@ -5,11 +5,6 @@ class PeliculasController < ApplicationController
 
 	def show
    		@pelicula = Pelicula.find(params[:id])
-   		if @pelicula.name == "Cenicienta"
-   			@cenicienta = true
-   		else
-   			@cenicienta = false
-   		end
    	end
 
 	def new

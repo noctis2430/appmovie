@@ -1,2 +1,15 @@
-<h1>Peliculas#index</h1>
-<p>Find me in app/views/peliculas/index.html.erb</p>
+<div class="container">
+<h1>Aquí todas las películas que tenemos en la BBDD</h1>
+
+<% @peliculas.each do |peli| %>
+	<p> <%= link_to peli.name, peli %> </p>
+	<p><%= peli.name %></p>
+	<p><%= peli.director %></p>
+	<p><%= peli.stars %></p>
+	<p><%= peli.year %></p>
+	
+	<p><%= link_to "Editar Pelicula", edit_pelicula_path(peli) %></p>
+<%end%>
+
+<p> <%= link_to "Añadir nueva peli", new_pelicula_path %> </p>
+</div>

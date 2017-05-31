@@ -10,5 +10,7 @@ Rails.application.routes.draw do
 
   get '/about' => 'static#about', :as => :about
 
+  resources :peliculas
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

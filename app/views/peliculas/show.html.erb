@@ -1,0 +1,12 @@
+<div class="container">
+<b>Nombre de la pelicula:</b> <%= @pelicula.name %><br>
+<b>Estrellas que tiene:</b> <%= @pelicula.stars %><br>
+<b>Director:</b> <%= @pelicula.director %><br>
+<b>Año:</b> <%= @pelicula.year %><br>
+<b>Se añadio a la base de datos el...</b> <%= @pelicula.created_at %><br>
+
+<%= @cenicienta %>
+<%= link_to "Delete", pelicula_path(@pelicula),
+						:method => :delete%>
+
+</div>

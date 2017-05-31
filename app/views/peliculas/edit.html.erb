@@ -1,0 +1,11 @@
+</div class="container">
+<%= form_for @pelicula do |peli| %>
+<%= peli.text_field :name %> <br>
+<%= peli.text_field :stars %> <br>
+<%= peli.text_field :director %> <br>
+<%= peli.text_field :year %> <br>
+
+<%= peli.submit "Enviar Pelicula" %>
+
+<%end%>
+</div>
