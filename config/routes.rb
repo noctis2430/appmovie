@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   root :to => 'statics#index'
 
-  get '/about' => 'static#about', :as => :about
+  get '/about' => 'statics#about', :as => :about
 
   resources :peliculas
 

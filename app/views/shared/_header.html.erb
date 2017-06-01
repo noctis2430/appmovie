@@ -18,11 +18,16 @@
                 <div class="main-navigation">
 					<button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
 					<ul class="menu">
-						<li class="menu-item current-menu-item"><a href="index.html">Home</a></li>
-						<li class="menu-item"><a href="about.html">About</a></li>
-						<li class="menu-item"><a href="review.html">Peliculas</a></li>
-						<li class="menu-item"><a href="joinus.html">Join us</a></li>
-						<li class="menu-item"><a href="contact.html">Contact</a></li>
+						<li class="menu-item current-menu-item"><a href="/">Home</a></li>
+						<li class="menu-item"><a href="/about">About</a></li>
+						<li class="menu-item"><a href="/peliculas">Peliculas</a></li>
+						<li class="menu-item"><% if user_signed_in? %>
+        Conectado como <%= current_user.email %>. No eres t&uacute;?
+        <%= link_to "Logout", destroy_user_session_path,:method => :delete %>
+      <% else %>
+        <%= link_to "Alta", new_user_registration_path %>
+						<li class="menu-item"><a href="contact.html"><%= link_to "Login", new_user_session_path %>
+        <% end %></li></a></li>
 					</ul> <!-- .menu -->
 
 					<form action="#" class="search-form">
