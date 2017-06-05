@@ -5,6 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'activeadmin', github: 'activeadmin'
+gem 'cancancan'
 gem 'coffee-script-source', '1.8.0'
 gem 'devise'
  
