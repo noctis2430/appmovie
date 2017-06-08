@@ -16,4 +16,11 @@
 		<%= link_to "Login", new_user_session_path %>
 		<% end %>
 	</div>
+	<div>
+		<%= current_user.id  %> 
+		<%= current_user.email %>
+		<%= current_user.current_sign_in_at  %>
+		<%= current_user.sign_in_count %>
+		<%= current_user.created_at %>
+	</div>
 </div>
