@@ -1,0 +1,17 @@
+<div class="container">
+	<%= form_for @setting do |f| %>
+ 
+    	<div class="field">
+    		<% f.label :country %><br>
+        	<%= f.text_field :country, placeholder: "Pais"%>
+    	</div>
+    	<div class="field">
+    		<% f.label :language %> <br />
+        	<%= f.text_field :language, placeholder: "Idioma"%>
+    	</div>    
+    	 
+    	<div class="field">
+        	<%= f.submit "Guardar", class:"btn btn-sm btn-danger white", style:"margin-top: 15px;" %> <br /> <br />
+    	</div>
+	<% end %>
+</div>

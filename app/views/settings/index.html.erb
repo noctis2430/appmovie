@@ -6,21 +6,47 @@
 		<%= value %>
 	</div>
 	<% end %>
-
-	<div id="user-nav">
-		<% if user_signed_in? %>
-		Conectado como <%= current_user.email %>. No eres t&uacute;?
-		<%= link_to "Logout", destroy_user_session_path,:method => :delete %>
-		<% else %>
-		<%= link_to "Alta", new_user_registration_path %> o 
-		<%= link_to "Login", new_user_session_path %>
-		<% end %>
-	</div>
 	<div>
-		<%= current_user.id  %> 
-		<%= current_user.email %>
-		<%= current_user.current_sign_in_at  %>
-		<%= current_user.sign_in_count %>
-		<%= current_user.created_at %>
+		<table style="width:100%; border: 1px solid black;">
+			<tr style="border: 1px solid black; align: center; background-color: #e4e3e3">
+				<th style="padding: 10px; border: 1px solid black; text-align: center;">ID</th>
+				<th style="padding: 10px; border: 1px solid black; text-align: center;">Email</th>
+				<th style="padding: 10px; border: 1px solid black; text-align: center;">Current sign in at</th>
+				<th style="padding: 10px; border: 1px solid black; text-align: center;">Sign in count</th> 
+				<th style="padding: 10px; border: 1px solid black; text-align: center;">Created at</th>
+			</tr>
+			<tr>
+				<td style="padding: 10px; text-align: center;"><%= current_user.id  %> </td>
+				<td style="padding: 10px; text-align: center;"><%= current_user.email %></td>
+				<td style="padding: 10px; text-align: center;"><%= current_user.current_sign_in_at  %></td>
+				<td style="padding: 10px; text-align: center;"><%= current_user.sign_in_count %></td> 
+				<td style="padding: 10px; text-align: center;"><%= current_user.created_at %></td>
+			</tr>
+		</table>
+	</div>
+	<!-- COMPROBACIO DE SETTING SI NO ES NULL -->  
+	<h2>Datos usuario</h2> 
+	<div>
+	 	<table style="width:100%; border: 1px solid black;">
+			<tr style="border: 1px solid black; background-color: #242f56; color: white">
+				<th style="padding: 10px; text-align: center; border: 1px solid black;">Pais</th>
+				<th style="padding: 10px; text-align: center; border: 1px solid black;">Idioma</th>
+				<th style="padding: 10px; text-align: center; border: 1px solid black;" colspan="2"><span class="glyphicon glyphicon-pencil"></span></th>
+			</tr>
+				<%if !@setting.nil?%>
+			<tr style="border: 1px solid black;">
+				<td style="padding: 10px; text-align: center; border: 1px solid black;"><%= @setting.country %></td>
+				<td style="padding: 10px; text-align: center; border: 1px solid black;"><%= @setting.language %></td>
+				<td style="padding: 10px; text-align: center; border: 1px solid black;">
+					<%= link_to ' Editar', edit_setting_path(@setting.id), :title => "Editar", class: 'btn btn-xs btn-primary fa fa-1x fa-edit ', style:"color: white;" %>
+				</td>
+				<td style="padding: 10px; text-align: center; border: 1px solid black;">
+					<%= link_to "Delete", setting_path(@setting),:method => :delete, :title => "Delete", class: 'btn btn-xs btn-danger fa fa-1x fa-edit ', style:"color: white;" %>
+				</td>
+   				<%else%>
+			</tr>	
+				<%= link_to 'Añadir', new_setting_path, title:"Añadir", class: "btn btn-xs btn-success fa fa-1x fa-address-book", style:"color:white;" %>
+			<%end%>
+		</table>
 	</div>
 </div>
