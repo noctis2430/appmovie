@@ -6,4 +6,8 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
      settings_path
    end
+
+   def set_locale
+   	I18n.locale = params[:locale].to_sym
+   end
 end
