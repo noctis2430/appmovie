@@ -1,5 +1,5 @@
 class StaticsController < ApplicationController
-	skip_before_action :authenticate_user!
+	# skip_before_action :authenticate_user!
   # def index
   # 	@setting = current_user.setting
   # end

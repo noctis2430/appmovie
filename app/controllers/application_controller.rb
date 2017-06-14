@@ -1,13 +1,9 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
 
   def after_sign_in_path_for(resource)
      settings_path
-   end
-
-   def set_locale
-   	I18n.locale = params[:locale].to_sym
    end
 end

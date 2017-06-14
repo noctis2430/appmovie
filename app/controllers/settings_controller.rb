@@ -1,5 +1,5 @@
 class SettingsController < ApplicationController
-
+	
 	layout "admin"
 	
 	def index

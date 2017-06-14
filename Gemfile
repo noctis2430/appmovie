@@ -46,8 +46,6 @@ group :development do
 # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
 gem 'web-console', '>= 3.3.0'
 gem 'sqlite3', '1.3.12'
-gem 'pry-rails'
-gem 'awesome-print'
 end
  
 group :production do
