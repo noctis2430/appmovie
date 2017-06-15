@@ -9,6 +9,7 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'cancancan'
 gem 'coffee-script-source', '1.8.0'
 gem 'devise'
+gem 'stripe'
  
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.2'

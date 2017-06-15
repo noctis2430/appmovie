@@ -1,40 +1,47 @@
 class StaticsController < ApplicationController
-	# skip_before_action :authenticate_user!
-  # def index
-  # 	@setting = current_user.setting
-  # end
 
-  # def show
-  # 	@setting = current_user.setting
-  # end
+	def index
+		@peliculas = Pelicula.all
+	end
 
-  # def new
-  # 	@setting = current_user.setting.new
-  # end
+	def show
+   		@pelicula = Pelicula.find(params[:id])
+   	end
 
-  # def create
-  # 	@setting = current_user.setting.new(setting_params)
-  # 		if @setting.save
-  # 			redirect_to settings_path
-  # 		else
-  # 			render :new
-  # 		end
-  # end
+	def new
+		@pelicula = Pelicula.new
+	end
 
-  # def edit
-  # 	@setting = current_user.setting.find(params[:id])
-  # 	if @setting.update_attributes(setting_params)
-  # 		redirect_to settings_path
-  # 	else
-  # 		render :index
-  # 	end
+	def create
+		@pelicula = Pelicula.new(peli_params)
+		if @pelicula.save
+			redirect_to peliculas_path, :notice => "Se ha guardado la peli!"
+		else
+			render "new"
+		end
+	end
 
-  # 	private
-  # 	def setting_params
-  # 		params.require(:setting).permit(:language, :country)
-  # 	end
-  # end
+	def edit
+		@pelicula = Pelicula.find(params[:id])
+	end
 
-  # def about
-  # end
+	def update
+		@pelicula = Pelicula.find(params[:id])
+		if @pelicula.update_attributes(peli_params)
+			redirect_to peliculas_path, :notice => "exito!"
+		else
+			render "edit"
+		end
+	end
+
+	def destroy
+		@pelicula = Pelicula.find(params[:id])
+		@pelicula.destroy
+		redirect_to peliculas_path, :notice => "Borrado"
+	end
+	private
+      def peli_params
+         params.require(:pelicula).permit(:name, :stars, :year, :director)
+      end
+	
 end

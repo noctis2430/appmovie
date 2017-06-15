@@ -1,4 +1,12 @@
 es:
-  site_title: "Esta es la versión en español"
-  site_name: "Mi Sitio"
-  welcome: "Bienvenido a nuestro maravilloso sitio web"
+  # activerecord:
+  #   models:
+  #     setting:
+  #       attributes:
+  #         country:
+  #           no_country: "Error! No has puesto pais"
+  #         language:
+  #           no_language: "Error! No has puesto idioma"
+  time:
+    formats:
+      long: "%d/%m/%Y %H:%M"

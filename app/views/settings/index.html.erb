@@ -48,5 +48,41 @@
 				<%= link_to 'Añadir', new_setting_path, title:"Añadir", class: "btn btn-xs btn-success fa fa-1x fa-address-book", style:"color:white;" %>
 			<%end%>
 		</table>
+		<br/>
+		<br/>
+		<h2>Pagos usuario</h2> 
+		<p><%= link_to "Nuevo pago", new_charge_path, title:"Nuevo pago", class: "btn btn-primary", style:"color:white;" %></p>
+
+		<table style="width:100%; border: 1px solid black;">
+			<tr style="border: 1px solid black; align: center; background-color: #e4e3e3">
+				<th style="padding: 10px; border: 1px solid black; text-align: center;">Subscription</th>
+				<th style="padding: 10px; border: 1px solid black; text-align: center;">Channel</th>
+				<th style="padding: 10px; border: 1px solid black; text-align: center;">Active</th>
+				<th style="padding: 10px; border: 1px solid black; text-align: center;">Plan</th> 
+				<th style="padding: 10px; border: 1px solid black; text-align: center;">Amount</th>
+			</tr>
+			<%if !@payment.nil?%>
+				<%@payment.each do |payment|%>
+			<tr>
+				<td style="padding: 10px; text-align: center;"><%=payment.subscription%> </td>
+				<td style="padding: 10px; text-align: center;"><%=payment.channel%></td>
+				<td style="padding: 10px; text-align: center;"><%=payment.active%></td>
+				<td style="padding: 10px; text-align: center;"><%=payment.plan%></td> 
+				<td style="padding: 10px; text-align: center;"><%=payment.amount%></td>
+			</tr>
+				<%end%>
+			<%end%>
+		</table>
+		<!-- <br/>
+		<br/>
+		<% if !@payment.nil? %>
+		<%@payment.each do |payment|%>
+		<p><%= payment.subscription %></p>
+		<p><%= payment.channel %></p>
+		<p><%= payment.active %></p>
+		<p><%= payment.plan %></p>
+		<p><%= payment.amount %></p>                
+		<%end%>
+		<%end%> -->
 	</div>
 </div>
