@@ -22,7 +22,7 @@ class SettingsController < ApplicationController
   def create
   	@setting = current_user.build_setting(setting_params)
   	if @setting.save
-  		redirect_to settings_path
+  		redirect_to settings_path :notice => "Se han guardado el pais e idioma"
   	else
   		render :new
   	end
