@@ -1,7 +1,6 @@
 class PeliculasController < ApplicationController
   	def index
 		@peliculas = Pelicula.all
-	end
 
 	def show
    		@pelicula = Pelicula.find(params[:id])
@@ -40,6 +39,6 @@ class PeliculasController < ApplicationController
 	end
 	private
       def peli_params
-         params.require(:pelicula).permit(:name, :stars, :year, :director)
+         params.require(:pelicula).permit(:name, :stars, :year, :director, :actor, :genero)
       end
 end

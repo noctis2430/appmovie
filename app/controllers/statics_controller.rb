@@ -2,6 +2,15 @@ class StaticsController < ApplicationController
 
 	def index
 		@peliculas = Pelicula.all
+		if params[:search]
+ 			@peliculas = Pelicula.search(params[:search]).order("created_at DESC")
+		elsif params[:search_year]
+			@peliculas = Pelicula.search_year(params[:search_year])
+		elsif params[:search_genero]
+			@peliculas = Pelicula.search_genero(params[:search_genero])
+		else
+  		@peliculas = Pelicula.all.order('created_at DESC')
+		end
 	end
 
 	def show
@@ -41,7 +50,7 @@ class StaticsController < ApplicationController
 	end
 	private
       def peli_params
-         params.require(:pelicula).permit(:name, :stars, :year, :director)
+         params.require(:pelicula).permit(:name, :stars, :year, :director, :genero, :actor)
       end
 	
 end

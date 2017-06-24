@@ -4,9 +4,13 @@ class SettingsController < ApplicationController
 
 	def index
 		def index
-        @setting = current_user.setting
-        
-        @payment = current_user.payments
+      @setting = current_user.setting
+      @payment = current_user.payments
+      if params[:user][:email] == 'mi-email@email.com'
+        @email = "mi email"
+      else
+        @email = "otro email"
+      end
     end
 	end
 

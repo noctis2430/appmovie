@@ -12,6 +12,6 @@ ActiveAdmin.register Pelicula do
 #   permitted
 # end
 
-permit_params :name, :director, :year, :stars
+permit_params :name, :director, :year, :stars, :genero, :actor
 
 end

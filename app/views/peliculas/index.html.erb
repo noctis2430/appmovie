@@ -3,10 +3,12 @@
 
 <% @peliculas.each do |peli| %>
 	<p> <%= link_to peli.name, peli %> </p>
-	<p><%= peli.name %></p>
-	<p><%= peli.director %></p>
-	<p><%= peli.stars %></p>
-	<p><%= peli.year %></p>
+	<p>Nombre: <%= peli.name %></p>
+	<p>Director: <%= peli.director %></p>
+	<p>Estrellas: <%= peli.stars %></p>
+	<p>Año: <%= peli.year %></p>
+	<p>Actor principal: <%= peli.actor %></p>
+	<p>Genero: <%= peli.genero %></p>
 	
 	<p><%= link_to "Editar Pelicula", edit_pelicula_path(peli) %></p>
 <%end%>

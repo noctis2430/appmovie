@@ -1,9 +1,11 @@
 </div class="container">
 <%= form_for @pelicula do |peli| %>
-<%= peli.text_field :name %> <br>
-<%= peli.text_field :stars %> <br>
-<%= peli.text_field :director %> <br>
-<%= peli.text_field :year %> <br>
+<p><b>Name:</b><%= peli.text_field :name %></p> <br>
+<p><b>Stars:</b><%= peli.text_field :stars %></p> <br>
+<p><b>Director:</b><%= peli.text_field :director %></p> <br>
+<p><b>Año:</b><%= peli.text_field :year %></p> <br>
+<p><b>Actor:</b><%= peli.text_field :actor %></p> <br>
+<p><b>Genero:</b><%= peli.text_field :genero %></p> <br>
 
 <%= peli.submit "Enviar Pelicula" %>
 
