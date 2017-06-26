@@ -1,0 +1,22 @@
+<div class="row">
+	<div class="col-sm-12" style="text-align:center;">
+		<div class="form-inline pull-left">
+			<%= form_tag(root_path, :method => "get", id: "search-form") do %>
+			<%= text_field_tag :search, params[:search], placeholder: "Search Actor" %>
+			<!--<%= submit_tag t('search.submit'), class: 'btn btn-default'  %>-->
+			<% end %>
+		</div>	
+		<div class="form-inline pull-left">		
+			<%= form_tag(root_path, :method => "get", id: "search-form") do %>
+			<%= text_field_tag :search_year, params[:search_year], placeholder: "Search Year", class: 'form-control' %>
+			<!--<%= submit_tag t('search.submit'), class: 'btn btn-default' %>-->
+			<% end %>
+		</div>
+		<div class="form-inline">
+			<%= form_tag(root_path, :method => "get", id: "genero") do %>
+			<%= select_tag :search_genero, ("<option> Select Genre</option><br><option>ACCION</option><option>AVENTURAS</option><option>COMEDIA</option><option>ROMANCE</option><option>DRAMA</option><option>HISTORIA</option><option>HORROR</option><option>ANIMACION</option><option>FICCION</option><option>GUERRA</option><option>OESTE</option>").html_safe, class: 'btn btn-default', :onchange => "this.form.submit()"%>
+			<% end %>
+		</div>	
+	</div>
+</div>
+<br/>

@@ -2,6 +2,12 @@ class ChargesController < ApplicationController
 	 before_action :authenticate_user!
 
   def new
+    @amount = 500
+    @@amount = @amount
+    if params[:amount]
+      @amount = params[:amount]
+      @@amount = @amount
+    end
   end
 
   def create

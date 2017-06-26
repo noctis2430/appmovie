@@ -1,0 +1,23 @@
+<div class="container" align="center">
+<h2 class="text-center">Selecciona plan de pago</h2>
+<br>
+
+<div class="row">
+	<%= link_to new_charge_path(amount: @pelicula_id.price) do %>
+	<div class="col-md-6">
+		<div>
+			<img class="img-responsive" src="http://freeiconbox.com/icon/256/1912.png" alt="buy-movie">
+			<h2> Compra <%= @pelicula_id.name %> por: <br/> <%= @pelicula_id.price/100.0 %>€</h2>
+		</div>
+	</div>		
+	<% end %>	
+	<%= link_to select_monthly_subscription_path(@pelicula_id) do %>
+	<div class="col-md-6">
+		<div>
+			<img class="img-responsive" src="http://icons.veryicon.com/png/System/Badge/Subscribe%20Here.png" alt="buy-sub">
+			<h2> Suscribete</h2>
+		</div>
+	</div>	
+	<% end %>	
+</div>	
+</div>

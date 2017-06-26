@@ -1,0 +1,30 @@
+<div class="container" align="center">
+<h1>Comprar Pelicula</h1>
+
+<%= render "shared/search" %>
+
+<div class="row">
+  <%@peliculas.each do |peli|%>
+	  <div class="col-sm-6 col-md-4 col-lg-3 ">
+	      <div>
+	          <a href="<%= peliculas_path(peli) %>"><img class="img-responsive" src="<%=peli.url%>"></a>
+	          <p><b>Nombre:</b> <%=peli.name%></p>
+	          <p><b>Director:</b> <%=peli.director%></p>
+	          <p><b>Año:</b> <%=peli.year%></p>
+	          <p><b>Genero:</b> <%=peli.genero%></p>
+	          <p>
+	          <%= link_to select_plan_path(pelicula: peli.id, userid: @currentuser), class: "btn btn-lg btn-default", id: "buy-peli" do %>
+	          	<% if peli.price != nil %>
+		          	<img src="https://maxcdn.icons8.com/ultraviolet/PNG/40/Transport/starred_ticket-40.png" alt="buy-peli">
+		          	<b> <%= peli.price/100.0 %>€ </b>
+	          	<% else %>
+		          	<img src="https://maxcdn.icons8.com/ultraviolet/PNG/40/Transport/starred_ticket-40.png" alt="buy-peli">
+	          	<% end %>
+	          <% end %>	
+	          </p>
+	      </div>
+	  </div>
+  <%end%>
+</div>
+</div>
+<br>
