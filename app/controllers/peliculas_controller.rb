@@ -1,6 +1,7 @@
 class PeliculasController < ApplicationController
   	def index
 		@peliculas = Pelicula.all
+	end
 
 	def show
    		@pelicula = Pelicula.find(params[:id])
